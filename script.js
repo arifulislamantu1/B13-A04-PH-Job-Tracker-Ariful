@@ -17,6 +17,7 @@ const rejectedFilterBtn = document.getElementById('rejected-filter-btn');
 const allJobsCard = document.getElementById('all-jobs-card')
 const mainContainer = document.querySelector('main')
 const filteredSection = document.getElementById('filtered-section')
+const emptyDiv = document.getElementById('empty-div')
 
 function calculateCount(){
 
@@ -25,6 +26,13 @@ function calculateCount(){
     interviewCount.innerText =  interview.length;
     rejectedCount.innerText =  rejected.length;
 
+    if(totalCount.innerText != 0){
+        emptyDiv.classList.add('hidden')
+    }
+    else{
+         emptyDiv.classList.remove('hidden')
+    }
+    
 }
 
 calculateCount()
@@ -50,13 +58,33 @@ function toggleStyle(id){
         allJobsCard.classList.add('hidden');
         filteredSection.classList.remove('hidden');
         renderInterview()
+        if(interviewCount.innerText != '0'){
+        emptyDiv.classList.add('hidden')
+    }
+    else{
+         emptyDiv.classList.remove('hidden')
+    }
     }else if(id === 'all-filter-btn'){
         allJobsCard.classList.remove('hidden');
         filteredSection.classList.add('hidden')
+
+        if(jobAvailable.innerText != '0'){
+        emptyDiv.classList.add('hidden')
+    }
+    else{
+         emptyDiv.classList.remove('hidden')
+    }
     }else if(id === 'rejected-filter-btn'){
         allJobsCard.classList.add('hidden');
         filteredSection.classList.remove('hidden');
-        renderReject()
+        renderReject() 
+
+        if(rejectedCount.innerText != '0'){
+        emptyDiv.classList.add('hidden')
+    }
+    else{
+         emptyDiv.classList.remove('hidden')
+    }
     }
 }
 

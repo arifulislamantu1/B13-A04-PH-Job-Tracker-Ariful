@@ -21,8 +21,8 @@
     </style>
 
 </head>
-<body class="bg-[#f8fafc]">
-    <header class="w-[90%] mx-auto border-b border-[#e6e7e9] ">
+<body class="bg-[#f8fafc] py-[20px]">
+    <header class="w-[90%] mx-auto border-b border-[#e6e7e9]  sticky top-0 z-50 bg-[#f8fafc]">
         <h1 class="text-[#002c5c] font-[700] text-[32px] mb-[20px]">Job Application Tracker</h1>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-[16px]  mb-[31px]">
             <div class="bg-base-100 w-full p-[20px] rounded-[8px] border-1 border-[#f1f2f4]">
@@ -42,7 +42,7 @@
         </div>
     </header>
 
-    <main class="w-[90%] mx-auto">
+    <main class="w-[90%] mx-auto ">
         <div class="flex justify-between mt-[31px] mb-[26px]">
             <h1 class="text-[20px] text-[#002c5c] font-[600]">Available Jobs </h1>
             <p class="text-[#64748bFF] font-[500]"><span id="job-available">0</span> jobs</p>
@@ -53,6 +53,10 @@
             <button onclick="toggleStyle('rejected-filter-btn')" id="rejected-filter-btn" class="btn hover:bg-[#3b82f6] hover:text-white text-[#64748b] bg-[#ffffff] w-[80px]"> Rejected</button>
             
         </div>
+
+        <section id="empty-div" class=" pb-[100%]">
+            <div class="justify-items-center space-y-1 job-card p-[24px] bg-[#ffffff] border-1 border-[#f1f2f4] rounded-[8px] py-[90px] "> <img src="./image/jobs.png" alt=""> <p class="font-[600] text-[24px] text-[#002c5c]">No jobs available</p> <p class="text-[#323b49]">Check back soon for new job opportunities</p> </div>
+        </section>
 
         <section id="filtered-section" class=" hidden  space-y-[16px]">
         
